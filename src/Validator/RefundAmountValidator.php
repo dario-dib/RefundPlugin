@@ -41,7 +41,7 @@ final class RefundAmountValidator implements RefundAmountValidatorInterface
 
             $unitRefundedTotal = $this->remainingTotalProvider->getTotalLeftToRefund(
                 $unitRefund->id(),
-                null === $refundType ? $unitRefund->type() : $refundType,
+                $unitRefund->type(),
             );
 
             if ($unitRefund->total() > $unitRefundedTotal) {
